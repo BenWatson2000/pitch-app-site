@@ -61,4 +61,4 @@ change will say plainly what is now collected and why.
 
 ## Contact
 
-Questions about this policy: benthompsonwatson@hotmail.co.uk
+Questions about this policy: pitch.wildcamp@gmail.com
