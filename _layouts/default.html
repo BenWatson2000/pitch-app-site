@@ -29,24 +29,31 @@ body {
   line-height: 1.6;
 }
 
-/* The ground, behind everything, as faint as the app draws it small. */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: url("{{ '/assets/contours-page.png' | relative_url }}") center / cover no-repeat;
-  opacity: .30;
-  pointer-events: none;
-  z-index: 0;
-}
+/* **No contours behind the text.** The first version tiled a second
+   contour image down the whole page, and two different pieces of ground
+   meeting at the masthead's edge is a seam — you can see exactly where one
+   stops and the other starts. Paper below the fold, and the terrain
+   dissolves into it rather than ending at a line. */
 .wrap { position: relative; z-index: 1; }
 
 /* Masthead: contours, the wordmark, one red rule. */
 .hero {
-  background: url("{{ '/assets/contours-hero.png' | relative_url }}") center / cover no-repeat;
-  border-bottom: 1px solid var(--hairline);
-  padding: clamp(3.5rem, 12vw, 7rem) 1.5rem clamp(2rem, 6vw, 3rem);
+  position: relative;
+  padding: clamp(3.5rem, 12vw, 7rem) 1.5rem clamp(3.5rem, 9vw, 5.5rem);
 }
+/* The ground, fading out at the foot of itself. Same reasoning as the
+   scrim on a trip card: content should thin out under the words rather
+   than stop dead at a border. */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("{{ '/assets/contours-hero.png' | relative_url }}") center / cover no-repeat;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 52%, transparent 100%);
+          mask-image: linear-gradient(to bottom, #000 0%, #000 52%, transparent 100%);
+  pointer-events: none;
+}
+.hero-inner { position: relative; }
 .hero-inner { max-width: var(--measure); margin: 0 auto; }
 .wordmark {
   font-weight: 900;
