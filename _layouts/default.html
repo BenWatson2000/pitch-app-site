@@ -108,9 +108,11 @@ li::marker { color: var(--quiet); }
 hr { border: 0; border-top: 1px solid var(--hairline); margin: 2.75rem 0; }
 code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .92em; }
 
-/* A bare email on its own line is the one thing people come here for. */
-main p > strong:only-child,
-main p > a:only-child {
+/* The email is the one thing anybody arriving here is looking for, so it
+   gets the rule. Marked up explicitly rather than matched by shape: the
+   first attempt used `strong:only-child`, which ignores text nodes and so
+   also underlined any paragraph that merely *began* with a bold lead. */
+main .email {
   display: inline-block;
   font-weight: 800;
   font-size: clamp(1.05rem, 4vw, 1.35rem);

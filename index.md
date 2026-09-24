@@ -16,7 +16,7 @@ nothing to sign up for.
 
 Something not working, or a question about the app?
 
-**pitch.wildcamp@gmail.com**
+**pitch.wildcamp@gmail.com**{: .email}
 
 It is one person answering, so it may take a day or two, but it will be a
 real answer rather than a form.
