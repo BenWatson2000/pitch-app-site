@@ -1,8 +1,7 @@
 ---
+layout: default
 title: Pitch
 ---
-
-# Pitch
 
 **A wild-camping spot logger for iPhone.** The whole of Great Britain's
 contours, built into the app. Drop a pin where you are standing, get an

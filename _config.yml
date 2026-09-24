@@ -1,3 +1,6 @@
 title: Pitch
 description: A UK wild-camping spot logger for iPhone. Offline, private, no account.
-theme: jekyll-theme-minimal
+# No theme: the layout in _layouts/default.html is the app's own design
+# system — Archivo, warm grey paper, one red — so the site and the thing it
+# describes look like the same object.
+plugins: []
